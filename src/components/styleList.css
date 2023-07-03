@@ -95,7 +95,7 @@ i {
   margin-top: 20px;
   padding: 20px;
   width: 70%;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto; 
 }
 
 .lecture-cont {
