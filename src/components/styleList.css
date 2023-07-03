@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+
+body {
+  background: whitesmoke;
+}
+
+.left-nav {
+  width: 20%;
+  background: white;
+  /* position: ; */
+  left: 1px;
+  top: 1px;
+  height: 100vh;
+}
+
+.list-nav {
+  margin: 20px 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.left-nav .heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  margin: 20px 30px;
+}
+
+
+.grp {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.grp h1 {
+  margin-left: 20px;
+}
+
+.heading h1,
+i {
+  margin: 0 5px;
+}
+
+.heading i {
+  font-size: 25px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav .nav-items {
+  margin: 10px 5px;
+  font-size: 18px;
+}
+
+.main-container {
+  display: flex;
+}
+
+.container {
+  margin: 0 0 0 20px;
+}
+
+.container .top {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+}
+
+.chapter-details {
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.lecture-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-top: 10px;
+}
+
+.box {
+  height: 40px;
+  width: 40px;
+  border: 5px solid gray;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.head .box,
+.text {
+  margin: 10px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.lecture-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.lecture-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  width: 150px;
+  scroll-snap-align: start;
+}
+
+.lecture-item img {
+  width: 200px;
+}
+
+.lecture-name {
+  margin: 20px 0 0 0;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .left-nav {
+    display: none;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .container {
+    margin: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .left-nav {
+    display: none;
+  }
+
+  .container {
+    margin-left: 20px;
+  }
+}

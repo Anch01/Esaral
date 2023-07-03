@@ -1,32 +1,24 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router-dom';
-import { createRoot } from 'react-dom/client';
-import ChapteList from './components/ChapteList';
-import ChapterDetails from './components/ChapterDetails';
+import React from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import App from "./components/App";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <ChapteList />,
-    children: [
-      {
-        path: 'chapter/:id',
-        element: (
-          <>
-            <ChapterDetails />
-            <Outlet />
-          </>
-        ),
-      },
-    ],
+    path: "/",
+    element: <App />,
   },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router}>
-      <Route path="/" element={<ChapteList />} />
-      <Route path="/chapter/:id" element={<ChapterDetails />} />
+      <Route path="/" element={<App />} />
     </RouterProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
