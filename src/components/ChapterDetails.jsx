@@ -2,93 +2,44 @@ import React from "react";
 import image01 from "./image/image01.png";
 import image02 from "./image/image02.png";
 
-const ChapterDetails = () => {
-  let showdata = [
-    {
-      name: "Introduction",
-      id: 1,
-      image: image01,
-    },
-    {
-      name: "System of units",
-      id: 2,
-      image: image02,
-    },
-
-    {
-      name: "Lecture 3",
-      id: 3,
-      image: image01,
-    },
-    {
-      name: "Lecture 4",
-      id: 4,
-      image: image02,
-    },
-
-    {
-      name: "Lecture 5",
-      id: 5,
-      image: image01,
-    },
-  ];
+const ChapterDetails = ({ chapterData }) => {
+  const getImagesForChapter = (childrenCount) => {
+    const images = [image01, image02];
+    const repeatedImages = [];
+    for (let i = 0; i <= childrenCount; i++) {
+      const index = i % images.length;
+      repeatedImages.push(images[index]);
+    }
+    return repeatedImages;
+  };
 
   return (
-    <div className="chapter-details">
-      <div className="lecture-cont">
-        <div className="head">
-          <div className="box">0%</div>
-          <div className="text">
-            <h4>Unit &amp; Dimensions</h4>
-            <span>Lectures: 20</span>
+    <div>
+      {chapterData.map((chapter) => (
+        <div className="chapter-details" key={chapter.node_id}>
+          <div className="lecture-cont">
+            <div className="head">
+              <div className="box">0%</div>
+              <div className="text">
+                <h4>{chapter.display_name}</h4>
+                <span>Lectures: {chapter.children.length}</span>
+              </div>
+            </div>
+            <div className="icon">{">"}</div>
+          </div>
+          <div className="lecture-list">
+            {chapter.children.map((child, index) => (
+              <div className="lecture-item" key={child.node_link_id}>
+                <img
+                  src={getImagesForChapter(chapter.children.length)[index]}
+                  alt=""
+                />
+                <p className="lecture-name">{child.display_name}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="icon">{">"}</div>
-      </div>
-      <div className="lecture-list">
-        {showdata.map((item) => (
-          <div className="lecture-item" key={item.id}>
-            <img src={item.image} alt="" />
-            <p className="lecture-name">{item.name}</p>
-          </div>
-        ))}
-      </div>
-      <div className="lecture-cont">
-        <div className="head">
-          <div className="box">0%</div>
-          <div className="text">
-            <h4>Unit &amp; Dimensions</h4>
-            <span>Lectures: 20</span>
-          </div>
-        </div>
-        <div className="icon">{">"}</div>
-      </div>
-      <div className="lecture-list">
-        {showdata.map((item) => (
-          <div className="lecture-item" key={item.id}>
-            <img src={item.image} alt="" />
-            <p className="lecture-name">{item.name}</p>
-          </div>
-        ))}
-      </div>
-      <div className="lecture-cont">
-        <div className="head">
-          <div className="box">0%</div>
-          <div className="text">
-            <h4>Unit &amp; Dimensions</h4>
-            <span>Lectures: 20</span>
-          </div>
-        </div>
-        <div className="icon">{">"}</div>
-      </div>
-      <div className="lecture-list">
-        {showdata.map((item) => (
-          <div className="lecture-item" key={item.id}>
-            <img src={item.image} alt="" />
-            <p className="lecture-name">{item.name}</p>
-          </div>
-        ))}
-      </div>
+      ))}
     </div>
   );
 };

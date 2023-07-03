@@ -12,7 +12,6 @@ body {
 .left-nav {
   width: 20%;
   background: white;
-  /* position: ; */
   left: 1px;
   top: 1px;
   height: 100vh;
@@ -22,6 +21,17 @@ body {
   margin: 20px 30px;
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 80vh;
+}
+
+.list-nav::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f1f1f1;
+}
+
+.list-nav::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
 }
 
 .left-nav .heading {
@@ -31,7 +41,6 @@ body {
   align-items: center;
   margin: 20px 30px;
 }
-
 
 .grp {
   display: flex;
@@ -85,8 +94,8 @@ i {
   background: #fff;
   margin-top: 20px;
   padding: 20px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  width: 70%;
+  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 .lecture-cont {
@@ -127,27 +136,40 @@ i {
 .lecture-list {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto; 
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  width: 100%;
+  min-height: 100px; 
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }
 
+
 .lecture-item {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px auto;
-  width: 150px;
-  scroll-snap-align: start;
+  margin-right: 20px;
+  padding: 10px;
+  min-width: 100px; 
+  max-width: 200px; 
+  text-align: center;
 }
 
 .lecture-item img {
-  width: 200px;
+  width: 100%; 
+  height: auto;
+  max-height: 150px; 
+  object-fit: cover;
 }
 
 .lecture-name {
-  margin: 20px 0 0 0;
+  margin-top: 10px;
   font-weight: bold;
+  white-space: normal; 
+  text-align: center; 
 }
 
 @media (max-width: 767px) {
