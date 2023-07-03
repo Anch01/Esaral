@@ -129,22 +129,22 @@ i {
 }
 
 .icon {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 25px;
+  margin-right: 1250px;
+  color: #888;
 }
 
 .lecture-list {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto; 
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  min-height: 100px; 
+  min-height: 100px;
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
 }
-
 
 .lecture-item {
   flex: 0 0 auto;
@@ -153,23 +153,47 @@ i {
   align-items: center;
   margin-right: 20px;
   padding: 10px;
-  min-width: 100px; 
-  max-width: 200px; 
+  min-width: 100px;
+  max-width: 200px;
   text-align: center;
 }
 
 .lecture-item img {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  max-height: 150px; 
+  max-height: 150px;
   object-fit: cover;
 }
 
 .lecture-name {
   margin-top: 10px;
   font-weight: bold;
-  white-space: normal; 
-  text-align: center; 
+  white-space: normal;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  margin-left: 700px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 5px;
+  width: 150px;
+  outline: none;
+  
+}
+
+.search-bar-icon {
+  margin-left: 5px;
+  color: #888;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

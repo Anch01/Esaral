@@ -5,7 +5,7 @@ import ChapterList from "./ChapterList";
 import ChapterDetails from "./ChapterDetails";
 import "./styleList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [chapterData, setChapterData] = useState([]);
@@ -36,6 +36,13 @@ const App = () => {
             <div className="grp">
               <FontAwesomeIcon icon={faArrowLeft} />
               <h1 className="heading">Physics</h1>
+              <div className="search-bar">
+                <input type="search" placeholder="Search" />
+                <FontAwesomeIcon
+                  className="search-bar-icon"
+                  icon={faSearch}
+                />
+              </div>
             </div>
           </div>
           <ChapterDetails chapterData={chapterData} />
